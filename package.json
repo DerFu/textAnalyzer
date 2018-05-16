@@ -3,9 +3,13 @@
   "version": "1.0.0",
   "description": "Convert text to an object for analyzing",
   "main": "index.js",
+  "jest": {
+    "verbose": false,
+    "collectCoverage": true
+  },
   "scripts": {
     "start": "node index.js",
-    "test": "jest"
+    "test": "nyc jest"
   },
   "author": "",
   "license": "ISC",
@@ -15,6 +19,7 @@
     "underscore.string": "^3.3.4"
   },
   "devDependencies": {
-    "jest": "^22.4.3"
+    "jest": "^22.4.3",
+    "nyc": "^11.8.0"
   }
 }

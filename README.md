@@ -3,7 +3,7 @@ Transform text to an object to analyze and optimize (eg. seo, readability, etc)g
 
 First i try to make the test do right
 
-````
+```
 npm i
 npm run test
 ```
