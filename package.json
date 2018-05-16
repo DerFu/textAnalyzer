@@ -2,13 +2,19 @@
   "name": "textanalyzer",
   "version": "1.0.0",
   "description": "Convert text to an object for analyzing",
-  "main": "index.js",
+  "url": "https://github.com/DerFu/textAnalyzer",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DerFu/textAnalyzer.git"
+  },
+  "private": true,
   "jest": {
     "verbose": false,
     "collectCoverage": true
   },
   "scripts": {
     "start": "node index.js",
+    "changelog": "changelog -m",
     "test": "nyc jest"
   },
   "author": "",
@@ -19,6 +25,7 @@
     "underscore.string": "^3.3.4"
   },
   "devDependencies": {
+    "changelog": "^1.4.2",
     "jest": "^22.4.3",
     "nyc": "^11.8.0"
   }
