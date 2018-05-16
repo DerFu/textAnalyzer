@@ -20,7 +20,12 @@ const contentController = {
                     .replace(")", " )")
                     .replace("(", "( ")
                     .replace(", ", " , ")
-                    .split(" ");
+                    .replace(". ", " . ")
+                    .split(" ").map(wis => {
+                        return {
+                            value: wis
+                        }
+                    })
             })
         );
         return words;
