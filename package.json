@@ -16,6 +16,7 @@
   "scripts": {
     "start": "node index.js",
     "changelog": "changelog -m",
+    "report-coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov -t '4b59d60e-3530-4fdc-869a-d8ccfe7c3701'",
     "test": "nyc jest && codecov"
   },
   "author": "",
@@ -27,6 +28,7 @@
   },
   "devDependencies": {
     "changelog": "^1.4.2",
+    "codecov": "^3.0.2",
     "jest": "^22.4.3",
     "nyc": "^11.8.0"
   }
