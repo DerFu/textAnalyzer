@@ -10,12 +10,13 @@
   "private": true,
   "jest": {
     "verbose": false,
-    "collectCoverage": true
+    "collectCoverage": true,
+    "coverageDirectory": "./coverage/"
   },
   "scripts": {
     "start": "node index.js",
     "changelog": "changelog -m",
-    "test": "nyc jest"
+    "test": "nyc jest && codecov"
   },
   "author": "",
   "license": "ISC",
