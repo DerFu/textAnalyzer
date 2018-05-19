@@ -14,7 +14,7 @@
     "coverageDirectory": "./coverage/"
   },
   "scripts": {
-    "start": "pm2 start server.js",
+    "start": "nodemon server.js",
     "dev": "nodemon server.js",
     "version": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md",
     "report-coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov -t '4b59d60e-3530-4fdc-869a-d8ccfe7c3701'",
