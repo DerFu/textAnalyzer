@@ -16,6 +16,3 @@ const contentController = {
 }
 
 module.exports = contentController;
-
-
-// const sSplit = sentence.split(regex)[0].replace(',',' ,').split(' ');
