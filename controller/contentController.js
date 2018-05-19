@@ -1,30 +1,21 @@
-const s = require("underscore.string");
-
 const contentController = {
-    transformTextToObject: function (data) {
-        let erg = contentController.getParagraphs(data);
-        erg = contentController.getSentences(erg);
-        erg = contentController.getWords(erg);
-        return erg;
-    },
-    getParagraphs: data => {
-        return s(data).lines();
-    },
-    getSentences: data => {
-        return data.map(sentence => sentence.split(/[.?!]+/));
-    },
-    getWords: data => {
-        const words = data.map(sentence =>
-            sentence.map(wordsInSentence => {
-                return wordsInSentence
-                    .replace(")", " )")
-                    .replace("(", "( ")
-                    .replace(", ", " , ")
-                    .split(" ");
-            })
-        );
-        return words;
-    }
-};
+    transformTextToObject: (text) => text.split('\n')
+        .map(paragraph => paragraph.match(/([\S\s]+?)[.!?]/g))
+        .map(paragraph => paragraph.map(sentence => {
+            const regex = new RegExp(/[.|?|!]/g);
+            const sSplit = sentence.split(regex)[0]
+                .replace(',', ' ,')
+                .replace(':', ' :')
+                .replace(';', ' ;')
+                .replace(')', ' )')
+                .replace('(', '( ')
+                .split(' ');
+            sSplit.push(sentence.match(regex)[0])
+            return sSplit.filter(s => !!s).map(s => s);w
+        }))
+}
 
 module.exports = contentController;
+
+
+// const sSplit = sentence.split(regex)[0].replace(',',' ,').split(' ');

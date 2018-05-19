@@ -1,24 +1,13 @@
 const contentController = require('./contentController.js');
-const beispielText = `Ich bin der erste Satz. Und ich der zweite Satz.
+const beispielText = `Ich bin der erste Satz. Und ich, der zweite Satz.
 Und ich der zweite Absatz.`;
 
 const scenarios = [{
-  name: 'easy',
-  data: [
-    [
-      ["Ich", "bin", "der", "erste", "Satz"],
-      ["Und", "ich", "der", "zweite", "Satz"]
-    ],
-    [
-      ["Und", "ich", "der", "zweite", "Absatz"]
-    ]
-  ],
-}, {
   name: 'medium',
   data: [
     [
       ["Ich", "bin", "der", "erste", "Satz", "."],
-      ["Und", "ich", "der", "zweite", "Satz", "."]
+      ["Und", "ich", ",", "der", "zweite", "Satz", "."]
     ],
     [
       ["Und", "ich", "der", "zweite", "Absatz", "."]

@@ -17,7 +17,7 @@
     "start": "node index.js",
     "changelog": "changelog -m",
     "report-coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov -t '4b59d60e-3530-4fdc-869a-d8ccfe7c3701'",
-    "test": "nyc jest && codecov"
+    "test": "nyc jest --watch && codecov"
   },
   "author": "",
   "license": "ISC",
