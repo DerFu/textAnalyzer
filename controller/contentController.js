@@ -11,7 +11,8 @@ const contentController = {
                 .replace('(', '( ')
                 .split(' ');
             sSplit.push(sentence.match(regex)[0])
-            return sSplit.filter(s => !!s).map(s => s);w
+            return sSplit.filter(s => !!s).map(s => s);
+            w
         }))
 }
 

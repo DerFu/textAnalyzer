@@ -14,16 +14,19 @@
     "coverageDirectory": "./coverage/"
   },
   "scripts": {
-    "start": "node index.js",
-    "changelog": "changelog -m",
+    "start": "pm2 start server.js",
+    "dev": "nodemon server.js",
+    "version": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md",
     "report-coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov -t '4b59d60e-3530-4fdc-869a-d8ccfe7c3701'",
-    "test": "nyc jest --watch && codecov"
+    "test": "nyc jest --watch"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.18.2",
-    "express": "^4.16.3"
+    "express": "^4.16.3",
+    "nodemon": "^1.17.4",
+    "pm2": "^2.10.4"
   },
   "devDependencies": {
     "changelog": "^1.4.2",
