@@ -18,7 +18,10 @@
     "dev": "nodemon server.js",
     "version": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md",
     "report-coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov -t '4b59d60e-3530-4fdc-869a-d8ccfe7c3701'",
-    "test": "nyc jest --watch"
+    "test": "nyc jest --watch",
+    "serve": "vue-cli-service serve --open",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
   },
   "author": "",
   "license": "ISC",
@@ -26,12 +29,46 @@
     "body-parser": "^1.18.2",
     "express": "^4.16.3",
     "nodemon": "^1.17.4",
-    "pm2": "^2.10.4"
+    "pm2": "^2.10.4",
+    "vue": "^2.5.16"
   },
   "devDependencies": {
     "changelog": "^1.4.2",
     "codecov": "^3.0.2",
     "jest": "^22.4.3",
-    "nyc": "^11.8.0"
-  }
+    "nyc": "^11.8.0",
+    "@vue/cli-plugin-babel": "^3.0.0-beta.11",
+    "@vue/cli-plugin-eslint": "^3.0.0-beta.11",
+    "@vue/cli-service": "^3.0.0-beta.11",
+    "vue-template-compiler": "^2.5.16"
+  },
+  "babel": {
+    "presets": [
+      "@vue/app"
+    ]
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "rules": {},
+    "parserOptions": {
+      "parser": "babel-eslint"
+    }
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ]
 }
